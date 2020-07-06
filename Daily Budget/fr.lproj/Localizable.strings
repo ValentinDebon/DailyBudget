@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Daily Budget
+
+  Created by Valentin Debon on 03/07/2020.
+  Copyright © 2020 Valentin Debon. All rights reserved.
+*/
+
+"Daily Budget" = "Budget Quotidien";
+"Budgets List" = "Liste des budgets";
+"Configuration not available" = "Configuration indisponible";
+"New Budget" = "Nouveau budget";
+"Start Date" = "Date de début";
+"End Date" = "Date de fin";
+"Ceiling" = "Plafond";
+"Label (Optional)" = "Étiquette (Optionnelle)";
+"Add" = "Ajouter";
+"New Expense" = "Nouvelle dépense";
+"Date" = "Date";
+"Label" = "Étiquette";
+"Amount" = "Montant";
