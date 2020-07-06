@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A75C7B5724B33ACD00FDCFA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A75C7B5624B33ACD00FDCFA0 /* README.md */; };
 		A768BDF924AF559A0078F257 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BDF824AF559A0078F257 /* AppDelegate.swift */; };
 		A768BDFB24AF559B0078F257 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BDFA24AF559B0078F257 /* SceneDelegate.swift */; };
 		A768BDFD24AF559B0078F257 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BDFC24AF559B0078F257 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		A73744EB24B338D7007E96CA /* Daily Budget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Daily Budget.entitlements"; sourceTree = "<group>"; };
+		A75C7B5624B33ACD00FDCFA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A768BDF524AF559A0078F257 /* Daily Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Budget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768BDF824AF559A0078F257 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A768BDFA24AF559B0078F257 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		A768BDEC24AF559A0078F257 = {
 			isa = PBXGroup;
 			children = (
+				A75C7B5624B33ACD00FDCFA0 /* README.md */,
 				A768BDF724AF559A0078F257 /* Daily Budget */,
 				A768BDF624AF559A0078F257 /* Products */,
 			);
@@ -157,6 +160,7 @@
 			files = (
 				A768BE0524AF559F0078F257 /* LaunchScreen.storyboard in Resources */,
 				A768BE1924AFBF380078F257 /* Localizable.strings in Resources */,
+				A75C7B5724B33ACD00FDCFA0 /* README.md in Resources */,
 				A768BE0224AF559F0078F257 /* Preview Assets.xcassets in Resources */,
 				A768BDFF24AF559F0078F257 /* Assets.xcassets in Resources */,
 			);
