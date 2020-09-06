@@ -15,7 +15,7 @@ struct ExpensesView: View {
 	@ObservedObject var budget: Budget
 
     var body: some View {
-		ZStack(alignment: .bottom) {
+		VStack {
 			List {
 				ForEach(budget.expenses) { expense in
 					HStack {
@@ -32,15 +32,19 @@ struct ExpensesView: View {
 				}
 			}
 			HStack {
-				Text("\(CurrencyFormatter.default.string(amount: budget.total)) ➜ \(CurrencyFormatter.default.string(amount: budget.ceiling))")
-				.bold()
-				.font(.largeTitle)
+				VStack(alignment: .trailing) {
+					Text(CurrencyFormatter.default.string(amount: budget.total))
+					.bold()
+					.font(.largeTitle)
+					Text(CurrencyFormatter.default.string(amount: budget.ceiling))
+					.bold()
+					.font(.largeTitle)
+				}
 				Image(systemName: "plus.circle.fill").imageScale(.large)
 			}
-			.padding(25)
+			.padding(15)
 			.foregroundColor(colorScheme == .dark ? .black : .white)
-			.background(RoundedRectangle(cornerRadius: 20)
-				.fill(colorScheme == .dark ? Color.white : Color.black).padding(10))
+			.background(RoundedRectangle(cornerRadius: 20))
 			.onTapGesture {
 				self.isAddingExpense.toggle()
 			}
@@ -50,16 +54,6 @@ struct ExpensesView: View {
 		.sheet(isPresented: $isAddingExpense) {
 			NewExpenseView(budget: self.budget)
 		}
-			/*
-		.navigationBarItems(trailing:
-			Button(action: {
-				self.isAddingExpense.toggle()
-			}) {
-				Image(systemName: "plus").imageScale(.large)
-			}.sheet(isPresented: $isAddingExpense) {
-				NewExpenseView(budget: self.budget)
-			}
-		)*/
     }
 }
 

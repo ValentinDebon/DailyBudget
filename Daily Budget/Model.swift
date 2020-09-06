@@ -42,11 +42,15 @@ final class CurrencyFormatter: NumberFormatter {
 	}
 
 	func string<T>(amount: T) -> String where T: BinaryFloatingPoint {
-		guard let string = self.string(for: NSNumber(floatLiteral: Double(amount))) else {
+		guard let string = self.string(for: Double(amount)) else {
 			return "Invalid amount"
 		}
 
-		return "\(string)€"
+		if let currencySymbol = Locale.current.currencySymbol {
+			return string + currencySymbol
+		} else {
+			return string
+		}
 	}
 }
 
