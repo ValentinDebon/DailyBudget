@@ -9,12 +9,14 @@
 import SwiftUI
 
 struct NewBudgetView: View {
+	private static let currencyFormatter = Text.currencyFormatter
+
+	@EnvironmentObject private var budgetDAO : BudgetDAO
 	@State private var startDate = Date()
 	@State private var endDate = Calendar.current.date(byAdding: DateComponents(month: 1), to: Date())!
 	@State private var ceiling = 0.0
 	@State private var label = ""
-	@ObservedObject var dailyBudget: DailyBudget
-	@Binding var selectedTab: ContentView.Tab
+	@Binding var selectedTab : ContentView.Tab
 
     var body: some View {
 		Form {
@@ -25,14 +27,11 @@ struct NewBudgetView: View {
 				DatePicker(selection: $endDate, displayedComponents: .date) {
 					Text("End Date")
 				}
-				HStack {
-					TextField("Ceiling", value: $ceiling, formatter: CurrencyFormatter.default)
-					Text(CurrencyFormatter.default.string(amount: self.ceiling))
-				}
+				TextField("Ceiling", value: $ceiling, formatter: Self.currencyFormatter)
 				TextField("Label (Optional)", text: $label)
 			}
 			Button(action: {
-				self.dailyBudget.budgets.append(Budget(dateInterval: DateInterval(start: self.startDate, end: self.endDate), ceiling: self.ceiling, label: self.label))
+				try! self.budgetDAO.createBudget(budget: Budget(interval: DateInterval(start: self.startDate, end: self.endDate), ceiling: self.ceiling, label: self.label.isEmpty ? nil : self.label))
 				self.selectedTab = .budgetsList
 			}) {
 				Text("Add")
@@ -41,9 +40,3 @@ struct NewBudgetView: View {
     }
 }
 
-struct NewBudgetView_Previews: PreviewProvider {
-	@State private static var selectedTab = ContentView.Tab.newBudget
-    static var previews: some View {
-        NewBudgetView(dailyBudget: DailyBudget(), selectedTab: $selectedTab)
-    }
-}

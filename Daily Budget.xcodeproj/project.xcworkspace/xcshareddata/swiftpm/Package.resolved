@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SQLCodable",
+        "repositoryURL": "https://github.com/ValentinDebon/SQLCodable",
+        "state": {
+          "branch": null,
+          "revision": "2900198ed8be6fb6184d334a8d05f6f82699a01c",
+          "version": "0.1.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

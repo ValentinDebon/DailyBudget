@@ -9,11 +9,14 @@
 import SwiftUI
 
 struct NewExpenseView: View {
+	private static let currencyFormatter = Text.currencyFormatter
+
 	@Environment(\.presentationMode) private var presentationMode
+	@EnvironmentObject private var budgetDAO : BudgetDAO
 	@State private var date = Date()
+	@State private var amount = 0.0
 	@State private var label = ""
-	@State private var value = 0.0
-	@ObservedObject var budget: Budget
+	var budget : Budget
 
 	var body: some View {
 		Form {
@@ -22,23 +25,20 @@ struct NewExpenseView: View {
 					Text("Date")
 				}
 				TextField("Label", text: $label)
-				HStack {
-					TextField("Amount", value: $value, formatter: CurrencyFormatter.default)
-					Text(CurrencyFormatter.default.string(amount: self.value))
-				}
+				TextField("Amount", value: $amount, formatter: Self.currencyFormatter)
 			}
 			Button(action: {
-				self.budget.expenses.append(Expense(date: self.date, label: self.label, value: self.value))
+				try! self.budgetDAO.createExpense(forBudget: self.budget, expense: Expense(date: self.date, amount: self.amount, label: self.label))
 				self.presentationMode.wrappedValue.dismiss()
 			}) {
 				Text("Add")
-			}.disabled(!budget.dateInterval.contains(date) || label.isEmpty || value <= 0)
+			}.disabled(!budget.interval.contains(date) || label.isEmpty || amount <= 0)
 		}
 	}
 }
 
 struct NewExpenseView_Previews: PreviewProvider {
     static var previews: some View {
-		NewExpenseView(budget: Budget(dateInterval: DateInterval(), ceiling: 100, label: "Preview"))
+		NewExpenseView(budget: Budget(interval: DateInterval(), ceiling: 100, label: "Preview"))
     }
 }
