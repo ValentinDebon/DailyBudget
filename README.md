@@ -6,11 +6,7 @@ Simple Application to help you manage budgets on a daily basis.
 
 ## Screenshots
 
-![Budgets](./Screenshots/Budgets.png)
-
-![NewBudget](./Screenshots/NewBudget.png)
-
-![Expenses](./Screenshots/Expenses.png)
+![Preview](./Screenshots/Preview.png)
 
 ## Translations
 
