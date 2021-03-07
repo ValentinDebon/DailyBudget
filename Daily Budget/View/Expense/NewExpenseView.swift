@@ -28,17 +28,11 @@ struct NewExpenseView: View {
 				TextField("Amount", value: $amount, formatter: Self.currencyFormatter)
 			}
 			Button(action: {
-				try! self.budgetDAO.createExpense(forBudget: self.budget, expense: Expense(date: self.date, amount: self.amount, label: self.label))
+				try! self.budgetDAO.createExpense(expense: Expense(budget: self.budget, date: self.date, amount: self.amount, label: self.label))
 				self.presentationMode.wrappedValue.dismiss()
 			}) {
 				Text("Add")
-			}.disabled(!budget.interval.contains(date) || label.isEmpty || amount <= 0)
+			}.disabled(!budget.interval.contains(date) || label.isEmpty || amount <= 0.0)
 		}
 	}
-}
-
-struct NewExpenseView_Previews: PreviewProvider {
-    static var previews: some View {
-		NewExpenseView(budget: Budget(interval: DateInterval(), ceiling: 100, label: "Preview"))
-    }
 }

@@ -12,8 +12,9 @@ struct NewBudgetView: View {
 	private static let currencyFormatter = Text.currencyFormatter
 
 	@EnvironmentObject private var budgetDAO : BudgetDAO
-	@State private var startDate = Date()
-	@State private var endDate = Calendar.current.date(byAdding: DateComponents(month: 1), to: Date())!
+	@State private var startDate = Calendar.current.startOfDay(for: Date())
+	@State private var endDate = Calendar.current.date(byAdding: DateComponents(month: 1),
+													   to: Calendar.current.startOfDay(for: Date()))!
 	@State private var ceiling = 0.0
 	@State private var label = ""
 	@Binding var selectedTab : ContentView.Tab
@@ -35,7 +36,7 @@ struct NewBudgetView: View {
 				self.selectedTab = .budgetsList
 			}) {
 				Text("Add")
-			}.disabled(self.endDate < self.startDate || self.ceiling <= 0)
+			}.disabled(self.endDate <= self.startDate || self.ceiling <= 0)
 		}.navigationBarTitle("New Budget")
     }
 }

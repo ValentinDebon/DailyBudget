@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "SQLCodable",
-        "repositoryURL": "https://github.com/ValentinDebon/SQLCodable",
+        "repositoryURL": "https://github.com/ValentinDebon/SQLCodable.git",
         "state": {
           "branch": null,
-          "revision": "2900198ed8be6fb6184d334a8d05f6f82699a01c",
-          "version": "0.1.2"
+          "revision": "e5cfb95782d4d6d167ae17673233d41284586139",
+          "version": "0.2.1"
         }
       }
     ]

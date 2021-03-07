@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A753528525F4F1A30066BDDB /* SQLiteCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A753528425F4F1A30066BDDB /* SQLiteCodable */; };
+		A753528725F4F1A30066BDDB /* SQLCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A753528625F4F1A30066BDDB /* SQLCodable */; };
 		A7626A2B25E64ED900F7843F /* Text+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7626A2A25E64ED900F7843F /* Text+Currency.swift */; };
 		A768BDFD24AF559B0078F257 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BDFC24AF559B0078F257 /* ContentView.swift */; };
 		A768BDFF24AF559F0078F257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A768BDFE24AF559F0078F257 /* Assets.xcassets */; };
@@ -19,8 +21,6 @@
 		A79E8F1B25E57BB200463C45 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F1A25E57BB200463C45 /* Budget.swift */; };
 		A79E8F1E25E582B500463C45 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F1D25E582B500463C45 /* Expense.swift */; };
 		A79E8F2125E583EF00463C45 /* BudgetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F2025E583EF00463C45 /* BudgetDAO.swift */; };
-		A79FB0F825E71F1A001AAD61 /* SQLiteCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A79FB0F725E71F1A001AAD61 /* SQLiteCodable */; };
-		A79FB0FA25E71F1A001AAD61 /* SQLCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A79FB0F925E71F1A001AAD61 /* SQLCodable */; };
 		A7CD203A252734A000794A77 /* DailyBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD2039252734A000794A77 /* DailyBudgetApp.swift */; };
 		A7F4856E25E6E25D00505C4C /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4856D25E6E25D00505C4C /* Migrations.swift */; };
 		A7F4857125E717B700505C4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768BE0324AF559F0078F257 /* LaunchScreen.storyboard */; };
@@ -28,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		A73744EB24B338D7007E96CA /* Daily Budget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Daily Budget.entitlements"; sourceTree = "<group>"; };
+		A753528925F4FB6D0066BDDB /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		A75C7B5624B33ACD00FDCFA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A7626A2A25E64ED900F7843F /* Text+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Currency.swift"; sourceTree = "<group>"; };
 		A768BDF524AF559A0078F257 /* Daily Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Budget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,8 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A79FB0FA25E71F1A001AAD61 /* SQLCodable in Frameworks */,
-				A79FB0F825E71F1A001AAD61 /* SQLiteCodable in Frameworks */,
+				A753528725F4F1A30066BDDB /* SQLCodable in Frameworks */,
+				A753528525F4F1A30066BDDB /* SQLiteCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +74,7 @@
 		A768BDEC24AF559A0078F257 = {
 			isa = PBXGroup;
 			children = (
+				A753528925F4FB6D0066BDDB /* Screenshots */,
 				A75C7B5624B33ACD00FDCFA0 /* README.md */,
 				A768BDF724AF559A0078F257 /* Daily Budget */,
 				A768BDF624AF559A0078F257 /* Products */,
@@ -176,8 +178,8 @@
 			);
 			name = "Daily Budget";
 			packageProductDependencies = (
-				A79FB0F725E71F1A001AAD61 /* SQLiteCodable */,
-				A79FB0F925E71F1A001AAD61 /* SQLCodable */,
+				A753528425F4F1A30066BDDB /* SQLiteCodable */,
+				A753528625F4F1A30066BDDB /* SQLCodable */,
 			);
 			productName = "Daily Budget";
 			productReference = A768BDF524AF559A0078F257 /* Daily Budget.app */;
@@ -209,7 +211,7 @@
 			);
 			mainGroup = A768BDEC24AF559A0078F257;
 			packageReferences = (
-				A79FB0F625E71F1A001AAD61 /* XCRemoteSwiftPackageReference "SQLCodable" */,
+				A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */,
 			);
 			productRefGroup = A768BDF624AF559A0078F257 /* Products */;
 			projectDirPath = "";
@@ -470,25 +472,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A79FB0F625E71F1A001AAD61 /* XCRemoteSwiftPackageReference "SQLCodable" */ = {
+		A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ValentinDebon/SQLCodable";
+			repositoryURL = "https://github.com/ValentinDebon/SQLCodable.git";
 			requirement = {
 				kind = exactVersion;
-				version = 0.1.2;
+				version = 0.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A79FB0F725E71F1A001AAD61 /* SQLiteCodable */ = {
+		A753528425F4F1A30066BDDB /* SQLiteCodable */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A79FB0F625E71F1A001AAD61 /* XCRemoteSwiftPackageReference "SQLCodable" */;
+			package = A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */;
 			productName = SQLiteCodable;
 		};
-		A79FB0F925E71F1A001AAD61 /* SQLCodable */ = {
+		A753528625F4F1A30066BDDB /* SQLCodable */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A79FB0F625E71F1A001AAD61 /* XCRemoteSwiftPackageReference "SQLCodable" */;
+			package = A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */;
 			productName = SQLCodable;
 		};
 /* End XCSwiftPackageProductDependency section */

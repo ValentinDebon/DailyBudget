@@ -24,34 +24,21 @@ struct Migration {
 		""", """
 			create table expenses (
 				id integer not null,
+				budget_id integer not null,
 				date integer not null,
 				amount real not null,
 				label text not null,
 
 				check (amount > 0.0),
 				check (length(label) > 0),
-				primary key (id)
-			)
-		""", """
-			create table budget_expenses (
-				budget_id integer not null,
-				expense_id integer not null,
-
 				foreign key (budget_id) references budgets(id),
-				foreign key (expense_id) references expenses(id),
-				primary key (budget_id, expense_id)
+				primary key (id)
 			)
 		""", """
 			create trigger deleted_budget
 				after delete on budgets for each row
 			begin
-				delete from budget_expenses where budget_id = old.id;
-			end
-		""", """
-			create trigger deleted_budget_expenses
-				after delete on budget_expenses for each row
-			begin
-				delete from expenses where id = old.expense_id;
+				delete from expenses where budget_id = old.id;
 			end
 		"""]),
 	]

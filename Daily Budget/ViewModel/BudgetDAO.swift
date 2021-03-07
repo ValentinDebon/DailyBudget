@@ -8,7 +8,6 @@
 
 import Foundation
 import SQLCodable
-import SQLiteCodable
 
 final class BudgetDAO: SQLDataAccessObject, ObservableObject {
 	var database : SQLDatabase
@@ -30,31 +29,44 @@ final class BudgetDAO: SQLDataAccessObject, ObservableObject {
 
 	func deleteBudgets(atOffsets offsets: IndexSet) throws {
 		self.objectWillChange.send()
-		for index in offsets.reversed() {
-			try self.query("delete from budgets order by start_date desc limit 1 offset ?1", with: index).next()
+		try self.query("begin").next()
+		do {
+			for index in offsets.reversed() {
+				try self.query("delete from budgets order by start_date desc limit 1 offset ?1", with: index).next()
+			}
+			try self.query("commit").next()
+		} catch {
+			try self.query("rollback").next()
+			throw error
 		}
 	}
 
 	func totalExpenses(forBudget budget: Budget) throws -> Double {
-		try self.query("select sum(expenses.amount) from budget_expenses, expenses where budget_expenses.expense_id = expenses.id and budget_expenses.budget_id = ?1", with: budget.id).next() ?? 0.0
+		try self.query("select sum(expenses.amount) from expenses where expenses.budget_id = ?1", with: budget.id).next() ?? 0.0
 	}
 
 	/* Expenses CRUD methods & utils */
 
-	func createExpense(forBudget budget: Budget, expense: Expense) throws {
+	func createExpense(expense: Expense) throws {
 		self.objectWillChange.send()
-		try self.query("insert into budget_expenses values (?1, ?2)", with: budget.id, expense.id).next()
-		try self.query("insert into expenses values (:id, :date, :amount, :label)", with: expense).next()
+		try self.query("insert into expenses values (:id, :budget_id, :date, :amount, :label)", with: expense).next()
 	}
 
 	func readExpenses(forBudget budget: Budget) throws -> [Expense] {
-		try Array(self.query("select * from budget_expenses, expenses where budget_expenses.budget_id = ?1 and budget_expenses.expense_id = expenses.id order by date desc", with: budget.id))
+		try Array(self.query("select * from expenses where expenses.budget_id = ?1 order by date desc", with: budget.id))
 	}
 
 	func deleteExpenses(forBudget budget: Budget, atOffsets offsets: IndexSet) throws {
 		self.objectWillChange.send()
-		for index in offsets.reversed() {
-			try self.query("delete from budget_expenses where expense_id = (select id from budget_expenses, expenses where budget_expenses.budget_id = ?1 and budget_expenses.expense_id = expenses.id order by date desc limit 1 offset ?2)", with: budget.id, index).next()
+		try self.query("begin").next()
+		do {
+			for index in offsets.reversed() {
+				try self.query("delete from expenses where expenses.budget_id = ?1 order by date desc limit 1 offset ?2", with: budget.id, index).next()
+			}
+			try self.query("commit").next()
+		} catch {
+			try self.query("rollback").next()
+			throw error
 		}
 	}
 }
