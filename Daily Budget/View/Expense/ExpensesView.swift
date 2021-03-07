@@ -1,5 +1,5 @@
 //
-//  Expenses.swift
+//  ExpensesView.swift
 //  Daily Budget
 //
 //  Created by Valentin Debon on 03/07/2020.
@@ -12,39 +12,37 @@ struct ExpensesView: View {
 	@Environment(\.colorScheme) private var colorScheme
 	@State private var isAddingExpense = false
 	@State private var editMode = EditMode.inactive
-	@ObservedObject var budget: Budget
+	@EnvironmentObject private var budgetDAO : BudgetDAO
+	var budget : Budget
 
     var body: some View {
 		VStack {
 			List {
-				ForEach(budget.expenses) { expense in
+				ForEach(try! budgetDAO.readExpenses(forBudget: self.budget)) { expense in
 					HStack {
 						Text(expense.description)
 						Spacer()
-						Text(CurrencyFormatter.default.string(amount: expense.value))
+						Text(amount: expense.amount)
 					}
 				}
-				.onMove { offsets, offset in
-					self.budget.expenses.move(fromOffsets: offsets, toOffset: offset)
-				}
 				.onDelete { offsets in
-					self.budget.expenses.remove(atOffsets: offsets)
+					try! self.budgetDAO.deleteExpenses(forBudget: self.budget, atOffsets: offsets)
 				}
 			}
 			HStack {
 				VStack(alignment: .trailing) {
-					Text(CurrencyFormatter.default.string(amount: budget.total))
-					.bold()
-					.font(.largeTitle)
-					Text(CurrencyFormatter.default.string(amount: budget.ceiling))
-					.bold()
-					.font(.largeTitle)
+					Text(amount: try! self.budgetDAO.totalExpenses(forBudget: self.budget))
+						.bold()
+						.font(.largeTitle)
+					Text(amount: budget.ceiling)
+						.bold()
+						.font(.largeTitle)
 				}
 				Image(systemName: "plus.circle.fill").imageScale(.large)
 			}
-			.padding(15)
+			.padding(20)
 			.foregroundColor(colorScheme == .dark ? .black : .white)
-			.background(RoundedRectangle(cornerRadius: 20))
+			.background(RoundedRectangle(cornerRadius: 20).padding(5))
 			.onTapGesture {
 				self.isAddingExpense.toggle()
 			}
@@ -54,11 +52,5 @@ struct ExpensesView: View {
 		.sheet(isPresented: $isAddingExpense) {
 			NewExpenseView(budget: self.budget)
 		}
-    }
-}
-
-struct ExpensesView_Previews: PreviewProvider {
-    static var previews: some View {
-		ExpensesView(budget: Budget(dateInterval: DateInterval(), ceiling: 100, label: "Preview"))
     }
 }

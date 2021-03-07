@@ -3,32 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A740881025273F3200329F0D /* BackingStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740880F25273F3200329F0D /* BackingStorable.swift */; };
-		A7408814252742AF00329F0D /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7408813252742AF00329F0D /* CurrencyFormatter.swift */; };
-		A75C7B5724B33ACD00FDCFA0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A75C7B5624B33ACD00FDCFA0 /* README.md */; };
+		A753528525F4F1A30066BDDB /* SQLiteCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A753528425F4F1A30066BDDB /* SQLiteCodable */; };
+		A753528725F4F1A30066BDDB /* SQLCodable in Frameworks */ = {isa = PBXBuildFile; productRef = A753528625F4F1A30066BDDB /* SQLCodable */; };
+		A7626A2B25E64ED900F7843F /* Text+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7626A2A25E64ED900F7843F /* Text+Currency.swift */; };
 		A768BDFD24AF559B0078F257 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BDFC24AF559B0078F257 /* ContentView.swift */; };
 		A768BDFF24AF559F0078F257 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A768BDFE24AF559F0078F257 /* Assets.xcassets */; };
 		A768BE0224AF559F0078F257 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A768BE0124AF559F0078F257 /* Preview Assets.xcassets */; };
-		A768BE0524AF559F0078F257 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768BE0324AF559F0078F257 /* LaunchScreen.storyboard */; };
 		A768BE0D24AF56900078F257 /* BudgetSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BE0C24AF56900078F257 /* BudgetSummaryView.swift */; };
-		A768BE0F24AF5A5A0078F257 /* DailyBudget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BE0E24AF5A5A0078F257 /* DailyBudget.swift */; };
 		A768BE1124AF6FBA0078F257 /* NewBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BE1024AF6FBA0078F257 /* NewBudgetView.swift */; };
 		A768BE1324AF88F90078F257 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BE1224AF88F90078F257 /* ExpensesView.swift */; };
 		A768BE1524AF8A460078F257 /* NewExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A768BE1424AF8A460078F257 /* NewExpenseView.swift */; };
 		A768BE1924AFBF380078F257 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A768BE1B24AFBF380078F257 /* Localizable.strings */; };
+		A79E8F1B25E57BB200463C45 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F1A25E57BB200463C45 /* Budget.swift */; };
+		A79E8F1E25E582B500463C45 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F1D25E582B500463C45 /* Expense.swift */; };
+		A79E8F2125E583EF00463C45 /* BudgetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79E8F2025E583EF00463C45 /* BudgetDAO.swift */; };
 		A7CD203A252734A000794A77 /* DailyBudgetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD2039252734A000794A77 /* DailyBudgetApp.swift */; };
-		A7CD204825273A1F00794A77 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CD204725273A1F00794A77 /* Budget.swift */; };
+		A7F4856E25E6E25D00505C4C /* Migrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F4856D25E6E25D00505C4C /* Migrations.swift */; };
+		A7F4857125E717B700505C4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A768BE0324AF559F0078F257 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A73744EB24B338D7007E96CA /* Daily Budget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Daily Budget.entitlements"; sourceTree = "<group>"; };
-		A740880F25273F3200329F0D /* BackingStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackingStorable.swift; sourceTree = "<group>"; };
-		A7408813252742AF00329F0D /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		A753528925F4FB6D0066BDDB /* Screenshots */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Screenshots; sourceTree = "<group>"; };
 		A75C7B5624B33ACD00FDCFA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A7626A2A25E64ED900F7843F /* Text+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Currency.swift"; sourceTree = "<group>"; };
 		A768BDF524AF559A0078F257 /* Daily Budget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Budget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A768BDFC24AF559B0078F257 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A768BDFE24AF559F0078F257 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,14 +38,16 @@
 		A768BE0424AF559F0078F257 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A768BE0624AF559F0078F257 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A768BE0C24AF56900078F257 /* BudgetSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetSummaryView.swift; sourceTree = "<group>"; };
-		A768BE0E24AF5A5A0078F257 /* DailyBudget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudget.swift; sourceTree = "<group>"; };
 		A768BE1024AF6FBA0078F257 /* NewBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBudgetView.swift; sourceTree = "<group>"; };
 		A768BE1224AF88F90078F257 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
 		A768BE1424AF8A460078F257 /* NewExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseView.swift; sourceTree = "<group>"; };
 		A768BE1624AFBF140078F257 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A768BE1A24AFBF380078F257 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A79E8F1A25E57BB200463C45 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		A79E8F1D25E582B500463C45 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		A79E8F2025E583EF00463C45 /* BudgetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDAO.swift; sourceTree = "<group>"; };
 		A7CD2039252734A000794A77 /* DailyBudgetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBudgetApp.swift; sourceTree = "<group>"; };
-		A7CD204725273A1F00794A77 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		A7F4856D25E6E25D00505C4C /* Migrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migrations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,18 +55,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A753528725F4F1A30066BDDB /* SQLCodable in Frameworks */,
+				A753528525F4F1A30066BDDB /* SQLiteCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A748AE9025E7B5920004E19B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A79E8F2025E583EF00463C45 /* BudgetDAO.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A768BDEC24AF559A0078F257 = {
 			isa = PBXGroup;
 			children = (
+				A753528925F4FB6D0066BDDB /* Screenshots */,
 				A75C7B5624B33ACD00FDCFA0 /* README.md */,
 				A768BDF724AF559A0078F257 /* Daily Budget */,
 				A768BDF624AF559A0078F257 /* Products */,
+				A79E8F2425E585F700463C45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,10 +96,10 @@
 				A768BE0624AF559F0078F257 /* Info.plist */,
 				A73744EB24B338D7007E96CA /* Daily Budget.entitlements */,
 				A7CD2039252734A000794A77 /* DailyBudgetApp.swift */,
-				A768BDFC24AF559B0078F257 /* ContentView.swift */,
+				A7F4856D25E6E25D00505C4C /* Migrations.swift */,
 				A7CD2045252739D500794A77 /* Model */,
-				A7CD204B25273A8800794A77 /* Budget */,
-				A7CD204C25273A9900794A77 /* Expense */,
+				A748AE9025E7B5920004E19B /* ViewModel */,
+				A79E8F1025E577F600463C45 /* View */,
 				A768BDFE24AF559F0078F257 /* Assets.xcassets */,
 				A768BE0324AF559F0078F257 /* LaunchScreen.storyboard */,
 				A768BE1B24AFBF380078F257 /* Localizable.strings */,
@@ -100,13 +116,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A79E8F1025E577F600463C45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A7626A2A25E64ED900F7843F /* Text+Currency.swift */,
+				A768BDFC24AF559B0078F257 /* ContentView.swift */,
+				A7CD204B25273A8800794A77 /* Budget */,
+				A7CD204C25273A9900794A77 /* Expense */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A79E8F2425E585F700463C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A7CD2045252739D500794A77 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A740880F25273F3200329F0D /* BackingStorable.swift */,
-				A7408813252742AF00329F0D /* CurrencyFormatter.swift */,
-				A768BE0E24AF5A5A0078F257 /* DailyBudget.swift */,
-				A7CD204725273A1F00794A77 /* Budget.swift */,
+				A79E8F1A25E57BB200463C45 /* Budget.swift */,
+				A79E8F1D25E582B500463C45 /* Expense.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +177,10 @@
 			dependencies = (
 			);
 			name = "Daily Budget";
+			packageProductDependencies = (
+				A753528425F4F1A30066BDDB /* SQLiteCodable */,
+				A753528625F4F1A30066BDDB /* SQLCodable */,
+			);
 			productName = "Daily Budget";
 			productReference = A768BDF524AF559A0078F257 /* Daily Budget.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +210,9 @@
 				fr,
 			);
 			mainGroup = A768BDEC24AF559A0078F257;
+			packageReferences = (
+				A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */,
+			);
 			productRefGroup = A768BDF624AF559A0078F257 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,9 +227,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A768BE0524AF559F0078F257 /* LaunchScreen.storyboard in Resources */,
+				A7F4857125E717B700505C4C /* LaunchScreen.storyboard in Resources */,
 				A768BE1924AFBF380078F257 /* Localizable.strings in Resources */,
-				A75C7B5724B33ACD00FDCFA0 /* README.md in Resources */,
 				A768BE0224AF559F0078F257 /* Preview Assets.xcassets in Resources */,
 				A768BDFF24AF559F0078F257 /* Assets.xcassets in Resources */,
 			);
@@ -203,16 +241,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A768BE0F24AF5A5A0078F257 /* DailyBudget.swift in Sources */,
+				A79E8F1E25E582B500463C45 /* Expense.swift in Sources */,
+				A7F4856E25E6E25D00505C4C /* Migrations.swift in Sources */,
 				A7CD203A252734A000794A77 /* DailyBudgetApp.swift in Sources */,
-				A7CD204825273A1F00794A77 /* Budget.swift in Sources */,
 				A768BE0D24AF56900078F257 /* BudgetSummaryView.swift in Sources */,
 				A768BE1524AF8A460078F257 /* NewExpenseView.swift in Sources */,
 				A768BE1324AF88F90078F257 /* ExpensesView.swift in Sources */,
+				A7626A2B25E64ED900F7843F /* Text+Currency.swift in Sources */,
 				A768BE1124AF6FBA0078F257 /* NewBudgetView.swift in Sources */,
-				A740881025273F3200329F0D /* BackingStorable.swift in Sources */,
+				A79E8F1B25E57BB200463C45 /* Budget.swift in Sources */,
+				A79E8F2125E583EF00463C45 /* BudgetDAO.swift in Sources */,
 				A768BDFD24AF559B0078F257 /* ContentView.swift in Sources */,
-				A7408814252742AF00329F0D /* CurrencyFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -403,7 +442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,6 +470,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ValentinDebon/SQLCodable.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A753528425F4F1A30066BDDB /* SQLiteCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */;
+			productName = SQLiteCodable;
+		};
+		A753528625F4F1A30066BDDB /* SQLCodable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A753528325F4F1A30066BDDB /* XCRemoteSwiftPackageReference "SQLCodable" */;
+			productName = SQLCodable;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A768BDED24AF559A0078F257 /* Project object */;
 }
